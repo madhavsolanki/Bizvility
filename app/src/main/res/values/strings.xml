@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bizvility</string>
+    <string name="upload_text">Update your photo manually If the photo is not set the default Gravatar will be the same as your login email account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="price_range_options">
+        <item>Inexpensive</item>
+        <item>Moderate</item>
+        <item>Pricey</item>
+        <item>Ultra High</item>
+    </string-array>
+
+
+</resources>
