@@ -23,6 +23,10 @@ class MonthlyAddListingScreen : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         binding.btnPremiumListing.setOnClickListener{
             val bottomSheet = BottomSheetFragment()
             bottomSheet.show(supportFragmentManager, "BottomSheet")

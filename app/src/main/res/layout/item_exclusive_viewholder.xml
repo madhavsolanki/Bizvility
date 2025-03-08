@@ -53,13 +53,42 @@
             </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/tvCategory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/icon_health"
-                android:text="Health &amp; Medical"
-                android:textColor="@color/dark_gray" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawableStart="@drawable/icon_health"
+                    android:text="Health &amp; Medical"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBtnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="3dp"
+                    android:text="Save"
+                    android:drawableStart="@drawable/ic_bookmark"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/dark_gray"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -70,6 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
+                    android:textSize="12sp"
                     android:drawableStart="@drawable/icon_location"
                     android:text="Agra" />
 
@@ -78,12 +108,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Open"
+                    android:textSize="12sp"
                     android:layout_marginEnd="3dp"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
 
         </LinearLayout>
+
 
 
     </LinearLayout>

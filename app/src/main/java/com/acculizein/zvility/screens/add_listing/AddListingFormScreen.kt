@@ -42,6 +42,10 @@ class AddListingFormScreen : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         // Apply Gradient to Form Heading
         applyGradientToCategoryText()
 

@@ -13,8 +13,11 @@
         android:theme="@style/Theme.Zvility"
         tools:targetApi="31">
         <activity
+            android:name=".screens.PersonDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".screens.auth.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,9 +27,7 @@
         <activity
             android:name=".screens.add_listing.AddListingFormScreen"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".screens.add_listing.YearlyAddListing"
             android:exported="false" />
@@ -54,14 +55,10 @@
             android:exported="false" />
         <activity
             android:name=".screens.auth.LoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

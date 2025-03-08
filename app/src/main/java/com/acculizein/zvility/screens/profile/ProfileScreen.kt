@@ -23,6 +23,10 @@ class ProfileScreen : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         binding.btnUpdateProfile.setOnClickListener {
             startActivity(Intent(this, UpdateProfileScreen::class.java))
         }

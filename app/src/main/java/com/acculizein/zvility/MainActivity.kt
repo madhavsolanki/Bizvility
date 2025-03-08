@@ -97,14 +97,6 @@ class MainActivity : AppCompatActivity() {
             Person(R.drawable.doctor_three, "Dr. Jane Smith", "Cardiologist", "Mumbai", "Open"),
             Person(R.drawable.doctor_four, "Dr. Rahul Verma", "Neurologist", "Bangalore",  "Closed"),
             Person(R.drawable.doctor_one, "Dr. Saumyata Neeraj", "Health & Medical", "Agra","Open"),
-            Person(R.drawable.doctor_two, "Dr. John Doe", "Dentist", "Delhi","Closed"),
-            Person(R.drawable.doctor_three, "Dr. Jane Smith", "Cardiologist", "Mumbai", "Open"),
-            Person(R.drawable.doctor_four, "Dr. Rahul Verma", "Neurologist", "Bangalore",  "Closed"),
-            Person(R.drawable.doctor_one, "Dr. Saumyata Neeraj", "Health & Medical", "Agra","Open"),
-            Person(R.drawable.doctor_two, "Dr. John Doe", "Dentist", "Delhi","Closed"),
-            Person(R.drawable.doctor_three, "Dr. Jane Smith", "Cardiologist", "Mumbai", "Open"),
-            Person(R.drawable.doctor_four, "Dr. Rahul Verma", "Neurologist", "Bangalore",  "Closed"),
-
         )
 
         val layoutManager = GridLayoutManager(this, 2) // 2 columns

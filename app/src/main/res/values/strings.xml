@@ -11,4 +11,12 @@
     </string-array>
 
 
+    <string name="doctor_details">
+        Dr. Saumyata’s E.N.T Clinic offers comprehensive care for all your ear, nose, and throat needs. Our experienced ENT specialist, Dr. Saumyata, provides personalized treatment plans for a wide range of conditions, from common ear infections to complex sinus issues. We utilize the latest technology and techniques to ensure accurate diagnosis and effective treatment. Book your appointment today and experience the difference in quality care.
+    </string>
+
+    <string name="address_details">
+        Shop no 15,16, Mahendra Market, Delhi Gate Rd, opposite Holy Public girls school, above Laxman fast food, Hariparwat, Professors Colony, Civil Lines, Agra, Uttar Pradesh 282002
+    </string>
+
 </resources>

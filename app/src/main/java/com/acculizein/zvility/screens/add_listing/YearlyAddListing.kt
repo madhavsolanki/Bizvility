@@ -22,6 +22,10 @@ class YearlyAddListing : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         binding.btnAnnualPremiumListing.setOnClickListener {
             val bottomSheet = BottomSheetFragment()
             bottomSheet.show(supportFragmentManager, "BottomSheet")

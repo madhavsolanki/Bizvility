@@ -27,6 +27,10 @@ class SavedListingScreen : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         setupRecyclerView()
     }
 

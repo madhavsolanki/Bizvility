@@ -26,6 +26,10 @@ class ReviewsScreen : AppCompatActivity() {
             insets
         }
 
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
         setupRecyclerView()
     }
 

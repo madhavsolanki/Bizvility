@@ -1,3 +1,4 @@
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -5,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.acculizein.zvility.R
 import com.acculizein.zvility.databinding.ItemExclusiveViewholderBinding
 import com.acculizein.zvility.models.Person
+import com.acculizein.zvility.screens.PersonDetailsActivity
 
 class PersonAdapter(private val personList: List<Person>) :
     RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
@@ -33,6 +35,28 @@ class PersonAdapter(private val personList: List<Person>) :
                 ContextCompat.getColor(context, R.color.red)
             }
             itemStatus.setTextColor(statusColor)
+
+            // Handle Save/Unsave Click
+            tvBtnSave.setOnClickListener {
+                val isSaved = tvBtnSave.text.toString() == "Saved"
+                if(isSaved){
+                    tvBtnSave.text = "Save"
+                    tvBtnSave.setTextColor(ContextCompat.getColor(context, R.color.dark_gray))
+                    tvBtnSave.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_bookmark, 0, 0, 0)
+                }else{
+                    tvBtnSave.text = "Saved"
+                    tvBtnSave.setTextColor(ContextCompat.getColor(context, R.color.blue))
+                    tvBtnSave.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_bookmark_filled_blue, 0, 0, 0)
+                }
+            }
+
+            // Handle item click to open details activity
+            root.setOnClickListener {
+                val intent = Intent(context, PersonDetailsActivity::class.java)
+                intent.putExtra("person", person)
+                context.startActivity(intent)
+            }
+
         }
     }
 
