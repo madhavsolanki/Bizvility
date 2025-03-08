@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.acculizein.zvility.databinding.ItemCategoryViewholderBinding
-import com.acculizein.zvility.models.Category
+import com.acculizein.zvility.models.client_models.Category
 
 class CategoryAdapter(private val categories: List<Category>) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 

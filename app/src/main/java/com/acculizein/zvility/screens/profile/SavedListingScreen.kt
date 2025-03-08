@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.acculizein.zvility.R
 import com.acculizein.zvility.adapters.SavedListingAdapter
 import com.acculizein.zvility.databinding.ActivitySavedListingScreenBinding
-import com.acculizein.zvility.models.SavedListing
+import com.acculizein.zvility.models.client_models.SavedListing
 
 class SavedListingScreen : AppCompatActivity() {
     private lateinit var binding : ActivitySavedListingScreenBinding

@@ -5,7 +5,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.acculizein.zvility.R
 import com.acculizein.zvility.databinding.ItemExclusiveViewholderBinding
-import com.acculizein.zvility.models.Person
+import com.acculizein.zvility.models.client_models.Person
 import com.acculizein.zvility.screens.PersonDetailsActivity
 
 class PersonAdapter(private val personList: List<Person>) :

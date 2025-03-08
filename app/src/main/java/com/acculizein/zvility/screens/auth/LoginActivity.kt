@@ -4,15 +4,26 @@ import android.content.Intent
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.acculizein.zvility.MainActivity
 import com.acculizein.zvility.R
 import com.acculizein.zvility.databinding.ActivityLoginBinding
+import com.acculizein.zvility.models.apis_models.LoginRequest
+import com.acculizein.zvility.models.apis_models.LoginResponse
+import com.acculizein.zvility.network.RetrofitClient
+import com.acculizein.zvility.utils.SharedPrefManager
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+
+    private lateinit var sharedPrefManager: SharedPrefManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +37,59 @@ class LoginActivity : AppCompatActivity() {
         }
         applyGradientToTextView()
 
+        // Initialize SharedPrefManager
+        sharedPrefManager = SharedPrefManager(this)
+
+        // Got to Signup screen
         binding.tvSignup.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
 
+        binding.btnLogin.setOnClickListener {
+            val email = binding.etLoginEmail.text.toString().trim()
+            val password = binding.etLoginPassword.text.toString().trim()
+
+            if(email.isEmpty() || password.isEmpty()){
+                Toast.makeText(this@LoginActivity, "Please enter email and password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            loginUser(email, password)
+        }
+
+    }
+
+    private fun loginUser(email:String, password:String){
+        val request = LoginRequest(email, password)
+
+        RetrofitClient.instance.loginUser(request)
+            .enqueue(object : Callback<LoginResponse>{
+                override fun onResponse(
+                    call: Call<LoginResponse>,
+                    response: Response<LoginResponse>
+                ) {
+                    if(response.isSuccessful && response.body()?.success == true){
+                        val token = response.body()?.token
+
+                        if(!token.isNullOrEmpty()){
+                            // Save Token to SharedPrefManager
+                            sharedPrefManager.saveToken(token)
+                            Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                            // Navigate to MainActivity
+                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                            finish()
+                        }
+                    }else{
+                        Toast.makeText(this@LoginActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(this@LoginActivity, "Error: ${t.message.toString()}", Toast.LENGTH_SHORT).show()
+                }
+
+            })
     }
 
     private fun applyGradientToTextView() {

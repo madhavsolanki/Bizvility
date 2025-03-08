@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.acculizein.zvility.R
 import com.acculizein.zvility.adapters.ReviewAdapter
 import com.acculizein.zvility.databinding.ActivityReviewsScreenBinding
-import com.acculizein.zvility.models.Review
+import com.acculizein.zvility.models.client_models.Review
 
 class ReviewsScreen : AppCompatActivity() {
     private lateinit var binding: ActivityReviewsScreenBinding

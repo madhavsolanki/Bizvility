@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.acculizein.zvility.databinding.ItemSavedListingViewholderBinding
-import com.acculizein.zvility.models.SavedListing
+import com.acculizein.zvility.models.client_models.SavedListing
 
 class SavedListingAdapter(private val personList: List<SavedListing>) : RecyclerView.Adapter<SavedListingAdapter.SavedPersonViewHolder>() {
 

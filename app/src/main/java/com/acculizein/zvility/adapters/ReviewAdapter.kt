@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.acculizein.zvility.databinding.ItemReviewsViewholderBinding
-import com.acculizein.zvility.models.Review
+import com.acculizein.zvility.models.client_models.Review
 
 class ReviewAdapter(
     private val reviewList: List<Review>,

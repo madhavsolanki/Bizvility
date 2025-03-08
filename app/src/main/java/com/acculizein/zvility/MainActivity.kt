@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acculizein.zvility.adapters.CategoryAdapter
 import com.acculizein.zvility.databinding.ActivityMainBinding
-import com.acculizein.zvility.models.Category
-import com.acculizein.zvility.models.Person
+import com.acculizein.zvility.models.client_models.Category
+import com.acculizein.zvility.models.client_models.Person
 import com.acculizein.zvility.screens.add_listing.MonthlyAddListingScreen
 import com.acculizein.zvility.screens.add_listing.YearlyAddListing
 import com.acculizein.zvility.screens.profile.ProfileScreen

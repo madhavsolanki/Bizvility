@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.acculizein.zvility.databinding.ActivityPersonDetailsBinding
-import com.acculizein.zvility.models.Person
+import com.acculizein.zvility.models.client_models.Person
 
 class PersonDetailsActivity : AppCompatActivity() {
 

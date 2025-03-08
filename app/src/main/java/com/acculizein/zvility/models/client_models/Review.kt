@@ -1,4 +1,4 @@
-package com.acculizein.zvility.models
+package com.acculizein.zvility.models.client_models
 
 data class Review(
     val loggedInUser: String,

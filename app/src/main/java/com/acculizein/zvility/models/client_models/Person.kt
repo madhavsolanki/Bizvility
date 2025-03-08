@@ -1,4 +1,4 @@
-package com.acculizein.zvility.models
+package com.acculizein.zvility.models.client_models
 
 import android.os.Parcel
 import android.os.Parcelable
