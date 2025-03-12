@@ -1,4 +1,4 @@
-package com.acculizein.zvility.models.apis_models
+package com.acculizein.zvility.models.apis_models.response
 
 data class RegisterResponse(
     val success: Boolean,

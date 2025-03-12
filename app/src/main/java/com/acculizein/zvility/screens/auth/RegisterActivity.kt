@@ -9,11 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.acculizein.zvility.MainActivity
 import com.acculizein.zvility.R
 import com.acculizein.zvility.databinding.ActivityRegisterBinding
-import com.acculizein.zvility.models.apis_models.RegisterRequest
-import com.acculizein.zvility.models.apis_models.RegisterResponse
+import com.acculizein.zvility.models.apis_models.request.RegisterRequest
+import com.acculizein.zvility.models.apis_models.response.RegisterResponse
 import com.acculizein.zvility.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -54,11 +53,6 @@ class RegisterActivity : AppCompatActivity() {
             registerUser(username, email)
         }
 
-
-
-        binding.homeBtn.setOnClickListener {
-            startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
-        }
     }
 
 

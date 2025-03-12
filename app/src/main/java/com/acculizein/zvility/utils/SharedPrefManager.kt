@@ -10,18 +10,39 @@ class SharedPrefManager(context: Context) {
     companion object{
         private const val PREF_NAME = "AppPrefs"
         private const val KEY_JWT_TOKEN = "jwt_token"
+        private const val KEY_TOKEN_TIMESTAMP = "token_timestamp" // To track token storage time
+        private const val EXPIRATION_TIME = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
     }
 
     fun saveToken(token: String){
-        sharedPreferences.edit().putString(KEY_JWT_TOKEN, token).apply()
+        val currentTime = System.currentTimeMillis()
+        sharedPreferences.edit()
+            .putString(KEY_JWT_TOKEN, token)
+            .putLong(KEY_TOKEN_TIMESTAMP, currentTime) // Save the time of token storage
+            .apply()
     }
 
-    fun getToken(): String ? {
-        return sharedPreferences.getString(KEY_JWT_TOKEN, null)
+    fun getToken(): String? {
+        val token = sharedPreferences.getString(KEY_JWT_TOKEN, null)
+        val storedTime = sharedPreferences.getLong(KEY_TOKEN_TIMESTAMP, 0)
+
+        return if (token != null && isTokenExpired(storedTime)) {
+            clearToken() // If expired, remove it
+            null
+        } else {
+            token
+        }
     }
 
-    fun clearToken(){
-        sharedPreferences.edit().remove(KEY_JWT_TOKEN).apply()
+    private fun isTokenExpired(storedTime: Long): Boolean {
+        val currentTime = System.currentTimeMillis()
+        return (currentTime - storedTime) > EXPIRATION_TIME // Token older than 24 hours
     }
 
+    fun clearToken() {
+        sharedPreferences.edit()
+            .remove(KEY_JWT_TOKEN)
+            .remove(KEY_TOKEN_TIMESTAMP)
+            .apply()
+    }
 }
